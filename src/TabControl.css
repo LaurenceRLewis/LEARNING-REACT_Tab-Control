@@ -1,0 +1,44 @@
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 1em;
+}
+
+.tab-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tab-control .tab-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tab-control .tab {
+  margin-right: 10px;
+}
+
+.tab-control button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+}
+
+.tab-control .selected button {
+  background-color: #ddd;
+}
+
+.tab-content {
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 100%;
+}
+
+.tab-panel.selected {
+  display: block;
+}
