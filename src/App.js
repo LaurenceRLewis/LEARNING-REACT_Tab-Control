@@ -1,6 +1,7 @@
 import React from "react";
 import TabControl from "./TabControl";
 import "./TabControl.css";
+import "./TabControlPurple.css";
 
 const tabs = [
   {

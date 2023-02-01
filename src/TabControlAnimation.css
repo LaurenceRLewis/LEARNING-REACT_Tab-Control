@@ -1,0 +1,46 @@
+.tab-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tab-control .tab-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tab-control .tab {
+  margin-right: 10px;
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.tab-control .tab.selected {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.tab-content {
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 100%;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.selected {
+  display: block;
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.tab-panel.selected.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}

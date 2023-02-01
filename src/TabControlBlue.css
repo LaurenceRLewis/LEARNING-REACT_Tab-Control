@@ -1,0 +1,22 @@
+/* blues.css */
+
+:root {
+  --primary-color: #3bb9ff;
+  --secondary-color: #3097d1;
+  --background-color: #ebf5ff;
+  --text-color: #333;
+}
+
+.tab-control button {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.tab-control .selected button {
+  background-color: var(--secondary-color);
+}
+
+.tab-content {
+  border: 1px solid var(--secondary-color);
+  background-color: var(--background-color);
+}

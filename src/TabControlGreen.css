@@ -1,0 +1,22 @@
+/* greens.css */
+
+:root {
+  --primary-color: #50c878;
+  --secondary-color: #458b74;
+  --background-color: #e9f5e1;
+  --text-color: #333;
+}
+
+.tab-control button {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.tab-control .selected button {
+  background-color: var(--secondary-color);
+}
+
+.tab-content {
+  border: 1px solid var(--secondary-color);
+  background-color: var(--background-color);
+}

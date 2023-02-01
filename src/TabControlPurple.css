@@ -1,0 +1,18 @@
+:root {
+  --primary-color: #7e57c2;
+  --secondary-color: #d1c4e9;
+  --text-color: #212121;
+}
+
+.tab-control button {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.tab-control .selected button {
+  background-color: var(--secondary-color);
+}
+
+.tab-content {
+  border: 1px solid var(--secondary-color);
+}
