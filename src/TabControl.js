@@ -26,7 +26,7 @@ const TabControl = ({ tabs }) => {
         ref={tabListRef}
       >
         {tabs.map((tab, index) => (
-          <div
+          <button
             className="tab"
             role="tab"
             aria-selected={selectedIndex === index}
@@ -38,7 +38,7 @@ const TabControl = ({ tabs }) => {
             onKeyDown={handleKeyDown}
           >
             {tab.label}
-          </div>
+          </button>
         ))}
       </div>
       {tabs.map((tab, index) => (
