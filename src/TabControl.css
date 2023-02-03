@@ -21,7 +21,7 @@ body {
   margin-right: 10px;
 }
 
-.tab-control button {
+.tab-control .tab {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -29,8 +29,12 @@ body {
   padding: 10px;
 }
 
-.tab-control .selected button {
+.tab-control .tab[aria-selected="true"] {
   background-color: #ddd;
+}
+
+.tab-control .tab[aria-selected="true"]:focus-visible {
+  border: 2px solid rgb(10, 83, 10);
 }
 
 .tab-content {
