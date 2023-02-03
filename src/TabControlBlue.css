@@ -7,12 +7,12 @@
   --text-color: #333;
 }
 
-.tab-control button {
+.tab-control .tab {
   background-color: transparent;
   color: var(--text-color);
 }
 
-.tab-control .selected button {
+.tab-control .tab[aria-selected="true"] {
   background-color: var(--secondary-color);
 }
 

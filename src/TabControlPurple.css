@@ -4,12 +4,12 @@
   --text-color: #212121;
 }
 
-.tab-control button {
+.tab-control .tab {
   background-color: transparent;
   color: var(--primary-color);
 }
 
-.tab-control .selected button {
+.tab-control .tab[aria-selected="true"] {
   background-color: var(--secondary-color);
 }
 
