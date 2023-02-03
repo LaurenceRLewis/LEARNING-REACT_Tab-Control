@@ -30,6 +30,10 @@ const TabControl = ({ tabs }) => {
         setSelectedIndex(tabs.length - 1);
         break;
       case "Tab":
+        const focusableEl = tabListRef.current.querySelector(
+          ':not([tabIndex="-1"])'
+        );
+        if (focusableEl) focusableEl.focus();
         break;
       default:
         break;
