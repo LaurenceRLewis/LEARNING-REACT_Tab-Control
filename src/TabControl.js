@@ -4,13 +4,32 @@ const TabControl = ({ tabs }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const tabListRef = useRef(null);
 
+  const firstTabRef = useRef(null);
+  const lastTabRef = useRef(null);
+
   const handleKeyDown = (event) => {
     switch (event.key) {
       case "ArrowLeft":
-        setSelectedIndex((selectedIndex - 1 + tabs.length) % tabs.length);
+        if (event.target === firstTabRef.current) {
+          setSelectedIndex(tabs.length - 1);
+        } else {
+          setSelectedIndex(selectedIndex - 1);
+        }
         break;
       case "ArrowRight":
-        setSelectedIndex((selectedIndex + 1) % tabs.length);
+        if (event.target === lastTabRef.current) {
+          setSelectedIndex(0);
+        } else {
+          setSelectedIndex((selectedIndex + 1) % tabs.length);
+        }
+        break;
+      case "Home":
+        setSelectedIndex(0);
+        break;
+      case "End":
+        setSelectedIndex(tabs.length - 1);
+        break;
+      case "Tab":
         break;
       default:
         break;
@@ -24,6 +43,7 @@ const TabControl = ({ tabs }) => {
         role="tablist"
         aria-orientation="horizontal"
         ref={tabListRef}
+        onKeyDown={handleKeyDown}
       >
         {tabs.map((tab, index) => (
           <button
@@ -34,8 +54,14 @@ const TabControl = ({ tabs }) => {
             id={`tab-${index}`}
             tabIndex={selectedIndex === index ? 0 : -1}
             key={tab.label}
+            ref={
+              index === 0
+                ? firstTabRef
+                : index === tabs.length - 1
+                ? lastTabRef
+                : null
+            }
             onClick={() => setSelectedIndex(index)}
-            onKeyDown={handleKeyDown}
           >
             {tab.label}
           </button>
@@ -43,7 +69,7 @@ const TabControl = ({ tabs }) => {
       </div>
       {tabs.map((tab, index) => (
         <div
-          tabIndex="0"
+          tabIndex={selectedIndex === index ? 0 : -1}
           role="tabpanel"
           hidden={selectedIndex !== index}
           id={`panel-${index}`}
